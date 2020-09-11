@@ -2,39 +2,43 @@ package JZcodes;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class JZ59_maxSlidingWindow2 {
     public static int[] maxSlidingWindow(int[] nums, int k) {
-        ArrayList<Integer> numList = new ArrayList<>();
-        ArrayList<Integer> maxList = new ArrayList<>();
+        int[] first_three = new int[1];
         if(nums==null || nums.length==0)
             return new int[0];
-        int currentMax = nums[0];
-        //init the first window
-        for (int i = 0; i < k; i++) {
-            numList.add(nums[i]);
-            if(nums[i]>=currentMax){
-                maxList.add(nums[i]);
-            }else{
-                maxList.add(currentMax);
-            }
-        }
+        LinkedList<Integer> deque = new LinkedList<>();
+        ArrayList<Integer> res = new ArrayList();
+        deque.add(nums[0]);
+        res.add(nums[0]);
         //start slid
-        for (int i = 0; i < nums.length-k; i++) {
-            
-            numList.add(nums[i]);
-            if(nums[i]>currentMax)
-                maxList.add(nums[i]);
-            else
-                maxList.add(currentMax);
+        for (int j = 1; j < nums.length; j++) {
+            int current = nums[j];
+            if(deque.getFirst()==nums[j])
+                deque.removeFirst();
+            while(deque.size()>=k || (!deque.isEmpty()&&deque.getLast()<nums[j])){
+                deque.removeLast();
+            }
+            deque.add(nums[j]);
+            res.add(deque.getFirst());
         }
-
-        return new int[]{2};
+        System.out.println(res.toString());
+        if(nums.length<k){
+            return new int[]{res.get(nums.length-1)};
+        }else{
+            int[] result = new int[res.size()-k+1];
+            for (int i = 0; i < result.length; i++) {
+                result[i] = res.get(i+k-1);
+            }
+            return result;
+        }
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,3,-1,-3,5,3,6,7};
-        int[] res = maxSlidingWindow(nums,3);
+        int[] nums = {7,2,4};
+        int[] res = maxSlidingWindow(nums,2);
         System.out.println(Arrays.toString(res));
     }
 }
