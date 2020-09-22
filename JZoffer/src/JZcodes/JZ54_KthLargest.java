@@ -1,10 +1,9 @@
 package JZcodes;
 
 import java.util.ArrayList;
-import JZcodes.TreeNode;
 
 public class JZ54_KthLargest {
-    public int kthLargest(TreeNode root, int k) {
+    public int kthLargest(MyTreeNode root, int k) {
         if(root==null)
             return -1;
         ArrayList<Integer> list = new ArrayList<>();
@@ -12,7 +11,7 @@ public class JZ54_KthLargest {
         return list.get(k-1);
     }
 
-    private void adddList(TreeNode node, ArrayList<Integer> list){
+    private void adddList(MyTreeNode node, ArrayList<Integer> list){
         if(node==null)
             return;
         int val = node.val;

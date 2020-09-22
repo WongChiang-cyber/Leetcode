@@ -1,9 +1,7 @@
 package JZcodes;
 
-import JZcodes.TreeNode;
-
 public class JZ55_maxDepth {
-    public int maxDepth(TreeNode root) {
+    public int maxDepth(MyTreeNode root) {
         if(root==null)
             return 0;
         int depth;
@@ -11,7 +9,7 @@ public class JZ55_maxDepth {
         return depth;
     }
 
-    private int find(TreeNode node,int depth){
+    private int find(MyTreeNode node, int depth){
         if(node==null)
             return depth;
         int nowDepth = depth+1;

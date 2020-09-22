@@ -1,7 +1,7 @@
 package JZcodes;
 
 public class JZ26_isSubStruct {
-    public boolean isSubStructure(TreeNode A, TreeNode B) {
+    public boolean isSubStructure(MyTreeNode A, MyTreeNode B) {
         if(B == null || A == null)
             return false;
         boolean res = false;
@@ -14,7 +14,7 @@ public class JZ26_isSubStruct {
         }
     }
 
-    private boolean isSame(TreeNode a,TreeNode b){
+    private boolean isSame(MyTreeNode a, MyTreeNode b){
         if(b==null)
             return true;
         if(a!=null){

@@ -1,9 +1,7 @@
 package JZcodes;
 
-import JZcodes.TreeNode;
-
 public class JZ55_isBalanced {
-    public boolean isBalanced(TreeNode root) {
+    public boolean isBalanced(MyTreeNode root) {
         if(root==null)
             return true;
         int maxDepth = find(root,0);
@@ -13,7 +11,7 @@ public class JZ55_isBalanced {
             return true;
     }
 
-    private int find(TreeNode node,int depth){
+    private int find(MyTreeNode node, int depth){
         if(node==null)
             return depth;
         int nowDepth = depth+1;
