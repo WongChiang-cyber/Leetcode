@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class JZ68_lowestCommonAncestor {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        ArrayList<TreeNode> l1 = new ArrayList<>();
-        HashSet<TreeNode> set2 = new HashSet<>();
-        TreeNode node = root;
+    public MyTreeNode lowestCommonAncestor(MyTreeNode root, MyTreeNode p, MyTreeNode q) {
+        ArrayList<MyTreeNode> l1 = new ArrayList<>();
+        HashSet<MyTreeNode> set2 = new HashSet<>();
+        MyTreeNode node = root;
         while(node!=p){
             l1.add(node);
             if(p.val<node.val){

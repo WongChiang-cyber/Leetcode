@@ -1,7 +1,7 @@
 package JZcodes;
 
 public class JZ46_TranslateNum {
-    public static int translateNum(int num) {
+    public int translateNum(int num) {
         String str = String.valueOf(num);
         treeNode root = new treeNode(-1,'#',str);
         createTree(root);
@@ -10,7 +10,7 @@ public class JZ46_TranslateNum {
         return sum;
     }
 
-    private static void createTree(treeNode node){
+    private void createTree(treeNode node){
         if(node==null || node.storeStr==null)
             return;
         if(node.storeStr.length()>=1){
@@ -33,7 +33,7 @@ public class JZ46_TranslateNum {
         }
     }
 
-    private static int counterLeaf(treeNode node, Integer sum){
+    private int counterLeaf(treeNode node, Integer sum){
         if(node==null)
             return 0;
         int l = counterLeaf(node.left,sum);
@@ -47,27 +47,30 @@ public class JZ46_TranslateNum {
     }
 
     public static void main(String[] args) {
-        System.out.println(translateNum(12258));
-    }
-}
-class treeNode {
-    int offset;
-    char val;
-    String storeStr;
-    treeNode left;
-    treeNode right;
-    public treeNode(int offset, char val, String storeStr) {
-        this.offset = offset;
-        this.val = val;
-        this.storeStr = storeStr;
+        JZ46_TranslateNum t = new JZ46_TranslateNum();
+        System.out.println(t.translateNum(12258));
     }
 
-    @Override
-    public String toString() {
-        return "TreeNode{" +
-                "offset=" + offset +
-                ", val=" + val +
-                ", storeStr='" + storeStr + '\'' +
-                '}';
+    class treeNode {
+        int offset;
+        char val;
+        String storeStr;
+        treeNode left;
+        treeNode right;
+        public treeNode(int offset, char val, String storeStr) {
+            this.offset = offset;
+            this.val = val;
+            this.storeStr = storeStr;
+        }
+
+        @Override
+        public String toString() {
+            return "TreeNode{" +
+                    "offset=" + offset +
+                    ", val=" + val +
+                    ", storeStr='" + storeStr + '\'' +
+                    '}';
+        }
     }
 }
+

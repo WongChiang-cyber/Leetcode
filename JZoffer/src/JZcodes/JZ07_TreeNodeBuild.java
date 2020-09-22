@@ -1,16 +1,16 @@
 package JZcodes;
 
 public class JZ07_TreeNodeBuild {
-    public TreeNode buildTree(int[] preorder, int[] inorder) {
-        TreeNode root = build(preorder,0,inorder,0,preorder.length);
+    public MyTreeNode buildTree(int[] preorder, int[] inorder) {
+        MyTreeNode root = build(preorder,0,inorder,0,preorder.length);
         return root;
     }
 
-    public TreeNode build(int[] preorder,int pre_start,int[] inorder,int in_start,int length){
+    public MyTreeNode build(int[] preorder, int pre_start, int[] inorder, int in_start, int length){
 
         if(length <= 0)
             return null;
-        TreeNode root = new TreeNode(preorder[pre_start]);
+        MyTreeNode root = new MyTreeNode(preorder[pre_start]);
         int root_index = 0;
         for (int i = in_start; i < in_start+length ; i++) {
             if(inorder[i] == root.val) {
