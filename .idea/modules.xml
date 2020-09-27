@@ -4,10 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ByteDanceRelated/ByteDanceRelated.iml" filepath="$PROJECT_DIR$/ByteDanceRelated/ByteDanceRelated.iml" />
       <module fileurl="file://$PROJECT_DIR$/DataStructure/DataStructure.iml" filepath="$PROJECT_DIR$/DataStructure/DataStructure.iml" />
-      <module fileurl="file://$PROJECT_DIR$/JZoffer/JZoffer.iml" filepath="$PROJECT_DIR$/JZoffer/JZoffer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DesignMode/DesignMode.iml" filepath="$PROJECT_DIR$/DesignMode/DesignMode.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Leetcode.iml" filepath="$PROJECT_DIR$/.idea/Leetcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/LiveCode/LiveCode.iml" filepath="$PROJECT_DIR$/LiveCode/LiveCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/NewCoder/NewCoder.iml" filepath="$PROJECT_DIR$/NewCoder/NewCoder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OJ_Codes/OJ_Codes.iml" filepath="$PROJECT_DIR$/OJ_Codes/OJ_Codes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SourceCodeAnalysis/SourceCodeAnalysis.iml" filepath="$PROJECT_DIR$/SourceCodeAnalysis/SourceCodeAnalysis.iml" />
       <module fileurl="file://$PROJECT_DIR$/tencent_9_11/tencent.iml" filepath="$PROJECT_DIR$/tencent_9_11/tencent.iml" />
     </modules>
   </component>
