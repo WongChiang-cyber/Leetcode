@@ -6,49 +6,83 @@ import java.util.Scanner;
 public class Demo01 {
 
     public static int[][] res;
+    public static int u,d,l,r;
+    public static int num;
+
+    public static boolean printA(int[][] res){
+        for (int i = l; i <= r; i++) {
+            res[u][i] = num++;
+        }
+        u++;
+        if(u>d)
+            return false;
+        for (int i = u; i <= d; i++) {
+            res[i][r] = num++;
+        }
+        r--;
+        if(r<l)
+            return false;
+        for (int i = r; i >= l; i--) {
+            res[d][i] = num++;
+        }
+        d--;
+        if(d<u)
+            return false;
+        for (int i = d; i >= u; i--) {
+            res[i][l] = num++;
+        }
+        l++;
+        if(l>r)
+            return false;
+        return true;
+    }
+
+    public static boolean printB(int[][] res){
+        for (int i = u; i <= d; i++) {
+            res[i][l] = num++;
+        }
+        l++;
+        if(l>r)
+            return false;
+
+        for (int i = l; i <= r; i++) {
+            res[d][i] = num++;
+        }
+        d--;
+        if(d<u)
+            return false;
+
+        for (int i = d; i >= u; i--) {
+            res[i][r] = num++;
+        }
+        r--;
+        if(r<l)
+            return false;
+
+        for (int i = r; i >= l; i--) {
+            res[u][i] = num++;
+        }
+        u++;
+        if(u>d)
+            return false;
+
+
+        return true;
+    }
+
 
     public static int[][] Matrix(int N){
         res = new int[N][N];
-        int u=0,l=0;
-        int d=N-1,r=N-1;
-        int num = 1;
+        u=0;l=0;
+        d=N-1;r=N-1;
+        num =1;
         while(true){
-            for (int i = l; i <= r; i++) {
-                res[u][i] = num++;
-//                num++;
-//                if(u==x && i==y)
-//                    return num;
-            }
-            u++;
-            if(u>d)
+            if(!printA(res)){
                 break;
-            for (int i = u; i <= d; i++) {
-                res[i][r] = num++;
-//                num++;
-//                if(i==x && r==y)
-//                    return num;
             }
-            r--;
-            if(r<l)
+            if(!printB(res)){
                 break;
-            for (int i = r; i >= l; i--) {
-                res[d][i] = num++;
-//                num++;
-//                if(d==x && i==y)
-//                    return num;
             }
-            d--;
-            if(d<u)
-                break;
-            for (int i = d; i >= u; i--) {
-                res[i][l] = num++;
-//                num++;
-//                if(i==x && l==y)
-//                    return num;
-            }
-            l++;
-            if(l>r)
-                break;
         }
         return res;
     }
@@ -59,7 +93,6 @@ public class Demo01 {
         for (int i = 0; i < c; i++) {
             int N = sc.nextInt();
             int M = sc.nextInt();
-            //System.out.println("N="+N+"M="+M);
             Matrix(N);
             for (int j = 0; j < M; j++) {
                 int x = sc.nextInt();
@@ -67,5 +100,9 @@ public class Demo01 {
                 System.out.println(res[x][y]);
             }
         }
+//        res = Matrix(7);
+//        for (int i = 0; i < res.length; i++) {
+//            System.out.println(Arrays.toString(res[i]));
+//        }
     }
 }
