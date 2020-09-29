@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/ByteDanceRelated/ByteDanceRelated.iml" filepath="$PROJECT_DIR$/ByteDanceRelated/ByteDanceRelated.iml" />
       <module fileurl="file://$PROJECT_DIR$/DataStructure/DataStructure.iml" filepath="$PROJECT_DIR$/DataStructure/DataStructure.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignMode/DesignMode.iml" filepath="$PROJECT_DIR$/DesignMode/DesignMode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DesignPattern/DesignPattern.iml" filepath="$PROJECT_DIR$/DesignPattern/DesignPattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Leetcode.iml" filepath="$PROJECT_DIR$/.idea/Leetcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/LiveCode/LiveCode.iml" filepath="$PROJECT_DIR$/LiveCode/LiveCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/NewCoder/NewCoder.iml" filepath="$PROJECT_DIR$/NewCoder/NewCoder.iml" />
