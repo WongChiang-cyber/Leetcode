@@ -1,11 +1,23 @@
-package JZcodes;
-
+package SortMethods;
 
 import java.util.Arrays;
 import java.util.Random;
 
-public class Partration {
-    public static int partration(int[] data,int start,int end){
+public class QuickSort {
+    public void sort(int[] data,int start,int end){
+        if(data==null||data.length==1)
+            return;
+        int index = partration(data,start,end);
+        System.out.println("after partrition "+index+" "+Arrays.toString(data));
+        if(index>start){
+            sort(data,start,index);
+        }
+        if(index<end){
+            sort(data,index+1,end);
+        }
+    }
+
+    public int partration(int[] data,int start,int end){
         if(data.length==1)
             return 0;
         if(start>=end)
@@ -32,16 +44,17 @@ public class Partration {
         //return the right index
         return first;
     }
-    private static void swap(int[] data,int i,int j){
+    private void swap(int[] data,int i,int j){
         int temp = data[i];
         data[i] = data[j];
         data[j] = temp;
     }
 
-//    public static void main(String[] args) {
-//        int[] data = {2,1,4,7,5,8,3,6};
-//        int index = partration(data,0,data.length);
-//        System.out.println(index);
-//        System.out.println(Arrays.toString(data));
-//    }
+    public static void main(String[] args) {
+        QuickSort t = new QuickSort();
+        int[] nums = {12,123,14,1,1244,56};
+        t.sort(nums,0,nums.length);
+        System.out.println(Arrays.toString(nums));
+
+    }
 }
