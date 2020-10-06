@@ -1,4 +1,4 @@
-package Productor_and_customer;
+package Productor_and_customer_synchronized;
 
 public class Customer implements Runnable{
     public MyBlockingQueue queue;

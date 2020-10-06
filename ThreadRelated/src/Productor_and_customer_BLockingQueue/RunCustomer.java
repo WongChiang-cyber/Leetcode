@@ -5,6 +5,7 @@ import java.util.concurrent.BlockingQueue;
 public class RunCustomer implements Runnable{
 
     private BlockingQueue<String> queue;
+
     RunCustomer(BlockingQueue<String> queue){
         this.queue = queue;
     }

@@ -1,12 +1,15 @@
-package Productor_and_customer;
+package Productor_and_customer_reentrantLock.Productor_and_customer_synchronized;
+
+import java.util.concurrent.locks.ReentrantLock;
 
 public class TestDemo {
     public static void main(String[] args) {
-        MyBlockingQueue queue = new MyBlockingQueue(10);
+        ReentrantLock lock =new ReentrantLock();
+        MyBlockingQueue queue = new MyBlockingQueue(10,lock);
         Runnable runCustomer = new Customer(queue);
         Runnable runProductor = new Productor(queue);
 
-        Thread[] threads = new Thread[3];
+        Thread[] threads = new Thread[4];
         for (int i = 0; i < threads.length; i++) {
             if((i&1)==1)
                 threads[i] = new Thread(runCustomer);
@@ -15,5 +18,4 @@ public class TestDemo {
             threads[i].start();
         }
     }
-
 }

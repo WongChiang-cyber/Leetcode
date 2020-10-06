@@ -1,4 +1,4 @@
-package Productor_and_customer;
+package Productor_and_customer_reentrantLock.Productor_and_customer_synchronized;
 
 public class Productor implements Runnable{
 

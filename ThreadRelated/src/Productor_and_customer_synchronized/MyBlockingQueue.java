@@ -1,4 +1,4 @@
-package Productor_and_customer;
+package Productor_and_customer_synchronized;
 
 import java.util.LinkedList;
 import java.util.Queue;
